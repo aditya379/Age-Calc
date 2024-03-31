@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    --background-color: hsl(234, 17%, 89%);
+    --main-color:white;
+    --text-color:black;
+    --text-color2:hsl(0, 1%, 44%);
+    --days-text-color: hsl(259, 100%, 65%);
+    --line:hsl(0, 0%, 86%);
+    --filter:invert(0);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-weight: bold;
+  font-size: 32px;
+  background-color: var(--background-color);
+}
+
+body.dark{
+    --background-color: hsl(235, 39%, 6%);
+    --main-color:rgb(22, 26, 56);
+    --text-color:rgb(255, 255, 255);
+    --text-color2:hsl(0, 1%, 44%);
+    --days-text-color: hsl(259, 100%, 65%);
+    --line:hsl(0, 0%, 86%);
+    --filter:invert(1);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 750px;
+  min-width: 400px;
+  background-color: var(--main-color) ;
+  border-bottom-right-radius: 35%;
+  border: none;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.192);
+  
+}
+.aligner{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.dates{
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 60vw;
+    align-items: center;
+}
+
+.days, .months, .years {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-inline: 10px;
+}
+
+.days input, .months input, .years input{
+    width: 130px;
+    height: 60px;
+    outline: none;
+    border: 0.5px solid var(--days-text-color);
+    border-radius: 5px;
+    padding: 10px;
+    font-size:32px;
+    font-weight: bold;
+}
+
+.daychild, .monthchild, .yearchild{
+    color: var(--text-color2);
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.error{
+    color:red;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    opacity: 0;
+}
+
+.divider{
+    display: flex;
+    width: 60vw;
+    align-items: center;
+}
+
+.line{
+    height: 1px;
+    width: 500px;
+    background-color: var(--line);
+}
+
+.image{
+    background-color:var(--text-color);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.image img{
+    filter: var(--filter);
+}
+
+.results{
+    color: var(--days-text-color);
+    font-size: 60px;
+}
+
+.results p{
+    color: var(--days-text-color);
+}
+
+.year, .month, .dayes{
+    display: flex;
+    color:var(--text-color);
+}
+
+@media (max-width: 600px) {
+    .main{
+        width: 90vw;
+    }
+    .aligner{
+        width: 90vw;
+    }
+    .dates{
+        width: 90vw;
+    }
+    .days, .months, .years {
+        margin-inline: 0px;
+    }
+    .daychild, .monthchild, .yearchild{
+        font-size: 12px;
+    }
+    .divider{
+        width: 90vw;
+    }
+    .line{
+        width: 80vw;
+    }
+    .image{
+        width: 60px;
+        height: 60px;
+    }
+    .results{
+        font-size: 40px;
+    }
+
+    .days input, .months input, .years input{
+        width: 100px;
+        height: 60px;
+        margin-inline: 10px;
+        font-size:20px;
+        font-weight: bold;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; margin-top: 25px; }
+.attribution a { color: hsl(228, 45%, 44%); }
